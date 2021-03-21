@@ -1,0 +1,597 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sproxy - Admin & Dashboard</title>
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/media/image/favicon.png"/>
+
+    <!-- Plugin styles -->
+    <link rel="stylesheet" href="vendors/bundle.css" type="text/css">
+
+        <!-- Slick -->
+    <!-- <link rel="stylesheet" href="vendors/slick/slick.css" type="text/css">
+    <link rel="stylesheet" href="vendors/slick/slick-theme.css" type="text/css"> -->
+    <!-- Daterangepicker -->
+    <!-- <link rel="stylesheet" href="vendors/datepicker/daterangepicker.css" type="text/css"> -->
+    <!-- DataTable -->
+    <!-- <link rel="stylesheet" href="vendors/dataTable/datatables.min.css" type="text/css"> -->
+    <!-- App styles -->
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css">
+    <script type="text/javascript" src="./assets/js/examples/charts/echarts.min.js"></script>
+</head>
+<body  class="">
+
+<!-- begin::preloader-->
+<div class="preloader">
+    <div class="preloader-icon"></div>
+</div>
+<!-- end::preloader -->
+
+<!-- BEGIN: Sidebar Group -->
+<div class="sidebar-group">
+
+    <!-- BEGIN: User Menu -->
+    <div class="sidebar" id="user-menu">
+        <div class="py-4 text-center" data-backround-image="assets/media/image/image1.jpg">
+            <figure class="avatar avatar-lg mb-3 border-0">
+                <img src="assets/media/image/user/man_avatar2.jpg" class="rounded-circle" alt="image">
+            </figure>
+            <h5 class="d-flex align-items-center justify-content-center true_username">root</h5>
+            <div>
+                <!-- Balance: <strong>$500</strong> -->
+            </div>
+        </div>
+        <div class="card mb-0 card-body shadow-none">
+            <div class="mb-4">
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item p-l-r-0" data-sidebar-target="#settings">Settings</a>
+                    <a href="#" class="list-group-item p-l-r-0 text-danger" data-sidebar-target="" id="logout">Sign Out!</a>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h6>City</h6>
+                <p class="text-muted mb-0">China / Chengdu</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- END: User Menu -->
+
+    <!-- BEGIN: Settings -->
+    <div class="sidebar" id="settings">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Settings</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item pl-0 pr-0">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                            <label class="custom-control-label" for="customSwitch1">Allow notifications.</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2">Hide user requests</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                            <label class="custom-control-label" for="customSwitch3">Speed up demands</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch4" checked>
+                            <label class="custom-control-label" for="customSwitch4">Hide menus</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch5">
+                            <label class="custom-control-label" for="customSwitch5">Remember next visits</label>
+                        </div>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch6">
+                            <label class="custom-control-label" for="customSwitch6">Enable report
+                                generation.</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END: Settings -->
+
+</div>
+<!-- END: Sidebar Group -->
+
+<!-- begin::main -->
+<div class="layout-wrapper">
+
+    <!-- begin::header -->
+    <div class="header d-print-none">
+
+        <div class="header-left">
+            <div class="navigation-toggler">
+                <a href="#" data-action="navigation-toggler">
+                    <i data-feather="menu"></i>
+                </a>
+            </div>
+            <div class="header-logo">
+                <a href=index.html>
+                    <img class="logo" src="assets/media/image/logo.png" alt="logo">
+                    <img class="logo-light" src="assets/media/image/logo-light.png" alt="light logo">
+                </a>
+            </div>
+        </div>
+
+        <div class="header-body">
+            <div class="header-body-left">
+                <div class="page-title">
+                    <h4>Sproxy Admin</h4>
+                </div>
+            </div>
+            <div class="header-body-right">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a href="#" title="Language" class="nav-link" data-toggle="dropdown">
+                            <img width="18" src="assets/media/image/flags/261-china.png"
+                                 alt="flag"
+                                 class="mr-2 rounded" title="United Kingdom"> China
+                        </a>
+                    
+                    </li>
+
+                    <!-- begin::header fullscreen -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" title="Fullscreen" data-toggle="fullscreen">
+                            <i class="maximize" data-feather="maximize"></i>
+                            <i class="minimize" data-feather="minimize"></i>
+                        </a>
+                    </li>
+                    <!-- end::header fullscreen -->
+
+                    <!-- begin::header search -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" title="Search" data-toggle="dropdown">
+                            <i data-feather="search"></i>
+                        </a>
+                        <div class="dropdown-menu p-2 dropdown-menu-right">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <div class="input-group-prepend">
+                                        <button class="btn" type="button">
+                                            <i data-feather="search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <!-- end::header search -->
+                    <!-- begin::settings -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" title="Settings" data-sidebar-target="#settings">
+                            <i data-feather="settings"></i>
+                        </a>
+                    </li>
+                    <!-- end::settings -->
+
+                    <!-- begin::user menu -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" title="User menu" data-sidebar-target="#user-menu">
+                            <span class="mr-2 d-sm-inline d-none true_username">Root</span>
+                            <figure class="avatar avatar-sm">
+                                <img src="assets/media/image/user/man_avatar2.jpg" class="rounded-circle"
+                                     alt="avatar">
+                            </figure>
+                        </a>
+                    </li>
+                    <!-- end::user menu -->
+
+                </ul>
+
+                <!-- begin::mobile header toggler -->
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item header-toggler">
+                        <a href="#" class="nav-link">
+                            <i data-feather="arrow-down"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end::mobile header toggler -->
+            </div>
+        </div>
+
+    </div>
+    <!-- end::header -->
+
+    <div class="content-wrapper">
+
+        <!-- begin::navigation -->
+        <div class="navigation">
+            <div class="navigation-menu-body">
+                <div class="navigation-menu-group">
+                    <div id="ecommerce">
+                        <ul>
+                            <li class="navigation-divider d-flex align-items-center">
+                                <!-- <i class="mr-2" data-feather="shopping-cart"></i>  -->
+                                Sporxy-Admin
+                            </li>
+                            <li>
+                                <a  class="active"
+                                    href="#">管理面板</a></li>
+                            <li>
+                                <a  href="user-list.html">代理详情</a></li>
+
+                            <li class="navigation-divider">List</li>
+                            <li>
+                                <a href="#" class="d-flex align-items-start">
+                                    <div>
+                                        <figure class="avatar mr-3">
+                                <span class="avatar-title bg-warning rounded">
+                                    <i class="ti-bar-chart-alt"></i>
+                                </span>
+                                        </figure>
+                                    </div>
+                                    <div>
+                                        <h6>Total User</h6>
+                                        <h4 class="mb-0 font-weight-bold total_user">0</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex align-items-start">
+                                    <div>
+                                        <figure class="avatar mr-3">
+                                <span class="avatar-title bg-success rounded">
+                                    <i class="ti-trash"></i>
+                                </span>
+                                        </figure>
+                                    </div>
+                                    <div>
+                                        <h6>New User</h6>
+                                        <h4 class="mb-0 new_user">0</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex align-items-start">
+                                    <div>
+                                        <figure class="avatar mr-3">
+                                <span class="avatar-title bg-danger rounded">
+                                    <i class="ti-reload"></i>
+                                </span>
+                                        </figure>
+                                    </div>
+                                    <div>
+                                        <h6>Data Status</h6>
+                                        <h4 class="mb-0 data_status">404</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- end::navigation -->
+
+        <div class="content-body">
+
+            <div class="content">
+
+                
+    <div class="page-header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href=index.html>Admin</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div>
+                                    <p class="text-muted">Total User</p>
+                                    <h2 class="font-weight-bold total_user">0</h2>
+                                </div>
+                                <div>
+                                    <figure class="avatar">
+                                        <span class="avatar-title bg-success-bright text-success rounded-circle">
+                                            <i class="ti-bar-chart"></i>
+                                        </span>
+                                    </figure>
+                                </div>
+                            </div>
+                            <!-- <div class="d-inline-flex align-items-center">
+                                <span class="text-success d-inline-flex align-items-center mr-2">
+                                    <span class="ti-arrow-up mr-2"></span> 5.1%
+                                </span> Up from past week
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div>
+                                    <p class="text-muted">New user</p>
+                                    <h2 class="font-weight-bold new_user">0</h2>
+                                </div>
+                                <div>
+                                    <figure class="avatar">
+                                        <span class="avatar-title bg-info-bright text-info rounded-circle">
+                                            <i class="ti-package"></i>
+                                        </span>
+                                    </figure>
+                                </div>
+                            </div>
+                            <!-- <div class="d-inline-flex align-items-center">
+                                <span class="text-danger d-inline-flex align-items-center mr-2">
+                                    <span class="ti-arrow-down mr-2"></span> 2.6%
+                                </span> Down from yesterday
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div>
+                                    <p class="text-muted">Data Status</p>
+                                    <h2 class="font-weight-bold data_status">404</h2>
+                                </div>
+                                <div>
+                                    <figure class="avatar">
+                                        <span class="avatar-title bg-warning-bright text-warning rounded-circle">
+                                            <i class="ti-reload"></i>
+                                        </span>
+                                    </figure>
+                                </div>
+                            </div>
+                            <!-- <div class="d-inline-flex align-items-center">
+                                <span class="text-success d-inline-flex align-items-center mr-2">
+                                    <span class="ti-arrow-up mr-2"></span> 1.9%
+                                </span> Up from yesterday
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="card-title">Chart</h6>
+                        <div>
+                            <a href="#" class="btn btn-outline-light btn-sm mr-2">
+                                <i class="fa fa-refresh"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#" data-toggle="dropdown"
+                                   class="btn btn-outline-light btn-sm"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
+                            <p class="mb-2">Port 80</p>
+                            <div class="d-flex align-items-end">
+                                <h2 class="mb-0 line-height-30 font-size-35 ports_80">0</h2>
+                                <!-- <span class="text-success small ml-2 d-flex align-items-center">
+                                    <span class="ti-arrow-up mr-2"></span>
+                                    <span class="badge badge-success rounded d-inline-flex align-items-center">1.9%</span>
+                                </span> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="mb-2">Port 22</p>
+                            <div class="d-flex align-items-end">
+                                <h2 class="mb-0 line-height-30 font-size-35 ports_22">0</h2>
+                                <!-- <span class="text-danger small ml-2 d-flex align-items-center">
+                                    <span class="ti-arrow-down mr-2"></span>
+                                    <span class="badge badge-danger rounded d-inline-flex align-items-center">1.9%</span>
+                                </span> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="mb-2">Port 443</p>
+                            <div class="d-flex align-items-end">
+                                <h2 class="mb-0 line-height-30 font-size-35 ports_443">0</h2>
+                                <!-- <span class="text-danger small ml-2 d-flex align-items-center">
+                                    <span class="ti-arrow-down mr-2"></span>
+                                    <span class="badge badge-danger rounded d-inline-flex align-items-center">1.9%</span>
+                                </span> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="mb-2">Port 3306</p>
+                            <div class="d-flex align-items-end">
+                                <h2 class="mb-0 line-height-30 font-size-35 ports_3306">0</h2>
+                                <!-- <span class="text-danger small ml-2 d-flex align-items-center">
+                                    <span class="ti-arrow-down mr-2"></span>
+                                    <span class="badge badge-danger rounded d-inline-flex align-items-center">1.9%</span>
+                                </span> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="mb-2">Port 8080</p>
+                            <div class="d-flex align-items-end">
+                                <h2 class="mb-0 line-height-30 font-size-35 ports_8080">0</h2>
+                                <!-- <span class="text-danger small ml-2 d-flex align-items-center">
+                                    <span class="ti-arrow-down mr-2"></span>
+                                    <span class="badge badge-danger rounded d-inline-flex align-items-center">1.9%</span>
+                                </span> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="mb-2">Port Others</p>
+                            <div class="d-flex align-items-end">
+                                <h2 class="mb-0 line-height-30 font-size-35 ports_others">0</h2>
+                                <!-- <span class="text-danger small ml-2 d-flex align-items-center">
+                                    <span class="ti-arrow-down mr-2"></span>
+                                    <span class="badge badge-danger rounded d-inline-flex align-items-center">1.9%</span>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stick_charts" style="height: 300%;width:100%;">
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <div class="d-flex justify-content-between"> -->
+                        <h6 class="card-title">Hot Ports</h6>
+                        <div id="hotports" style="width:100%; height: 200%">
+                            <!-- <div class="dropdown">
+                                <a href="#" data-toggle="dropdown"
+                                   class="btn btn-outline-light btn-sm"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div> -->
+                        </div>
+                    <!-- </div> -->
+                    <!-- <div id="hot-products"></div> -->
+                    <!-- <div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item pl-0 pr-0">
+                                <i class="fa fa-circle mr-1 text-secondary"></i> 80
+                            </li>
+                            <li class="list-group-item pl-0 pr-0">
+                                <i class="fa fa-circle mr-1 text-warning"></i> 22
+                            </li>
+                            <li class="list-group-item pl-0 pr-0">
+                                <i class="fa fa-circle mr-1 text-info"></i> 443
+                            </li>
+                            <li class="list-group-item pl-0 pr-0">
+                                <i class="fa fa-circle mr-1 text-success"></i> 3306
+                            </li>
+                            <li class="list-group-item pl-0 pr-0">
+                                <i class="fa fa-circle mr-1 text-danger"></i> 8080
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+
+            <!-- begin::footer -->
+            <footer class="content-footer">
+                <div>© 2020 Nago - <a href="http://www.bootstrapmb.com" target="_blank">Laborasyon</a></div>
+                <div>
+                    <nav class="nav">
+                        <a href="" class="nav-link">Licenses</a>
+                        <a href="#" class="nav-link">Change Log</a>
+                        <a href="#" class="nav-link">Get Help</a>
+                    </nav>
+                </div>
+            </footer>
+            <!-- end::footer -->
+
+        </div>
+
+    </div>
+
+</div>
+<!-- end::main -->
+<script type="text/javascript">
+    
+           </script>
+<!-- Plugin scripts -->
+<script src="vendors/bundle.js"></script>
+
+
+    <!-- Apex chart -->
+    <!-- <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+    <script src="vendors/charts/apex/apexcharts.min.js"></script> -->
+
+    <!-- Daterangepicker -->
+    <!-- <script src="vendors/datepicker/daterangepicker.js"></script> -->
+
+    <!-- DataTable -->
+    <!-- <script src="vendors/dataTable/datatables.min.js"></script> -->
+
+    <!-- Dashboard scripts -->
+    <!-- <script src="assets/js/examples/dashboard.js"></script> -->
+
+    <!-- Vamp -->
+    <!-- <script src="vendors/vmap/jquery.vmap.min.js"></script>
+    <script src="vendors/vmap/maps/jquery.vmap.usa.js"></script>
+    <script src="assets/js/examples/vmap.js"></script> -->
+
+    <!-- To use theme colors with Javascript -->
+    <div class="colors">
+        <div class="bg-primary"></div>
+        <div class="bg-primary-bright"></div>
+        <div class="bg-secondary"></div>
+        <div class="bg-secondary-bright"></div>
+        <div class="bg-info"></div>
+        <div class="bg-info-bright"></div>
+        <div class="bg-success"></div>
+        <div class="bg-success-bright"></div>
+        <div class="bg-danger"></div>
+        <div class="bg-danger-bright"></div>
+        <div class="bg-warning"></div>
+        <div class="bg-warning-bright"></div>
+    </div>
+
+    <!-- <script src="assets/js/examples/pages/ecommerce-dashboard.js"></script> -->
+
+
+<!-- App scripts -->
+<script src="assets/js/app.js"></script>
+<script src="./assets/js/index.js"></script>
+</body>
+</html>
